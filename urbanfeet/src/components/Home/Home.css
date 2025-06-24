@@ -40,8 +40,20 @@
   right: 10px;
   transform: translateY(-50%);
   color: #888;
-  pointer-events: none;
+  pointer-events: auto; /* ✅ Enable clicks */
+  cursor: pointer;       /* ✅ Show pointer */
 }
+
+.camera-icon {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: auto;  /* ✅ Enable clicks */
+  cursor: pointer;       /* ✅ Show pointer */
+}
+
 
 .nav-links {
   display: flex;

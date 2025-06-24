@@ -61,8 +61,6 @@ function HomeScreen() {
     </div>
     <div class="col">
 
-
-
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           {carouselData.map((_, index) => (
@@ -106,8 +104,6 @@ function HomeScreen() {
       </div>
       
 
-
-
     </div>
   </div>
 </div>
@@ -133,14 +129,9 @@ function HomeScreen() {
         </div>
       </div>
 
-      {/* Other Sections */}
-      {/* <Company_Name />
-      <FeatureProduct />
-      <LatestNewsSection />
-      <FeedbackSection />
-      <Footer /> */}
+      
       <Company_Name />
-      {/* <FeatureProduct /> */}
+      <FeatureProduct />
       <LatestNewsSection />
       <FeedbackSection />
       <Footer />

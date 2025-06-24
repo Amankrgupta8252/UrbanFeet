@@ -1,96 +1,94 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const ContactUs = () => {
+// Rename the array variable to avoid name conflict with the component
+const featuredProducts = [
+  {
+    id: 1,
+    title: "Stylish Sneakers",
+    description: "Comfortable and trendy sneakers for everyday wear.",
+    price: "$59.99",
+    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+  },
+  {
+    id: 2,
+    title: "Elegant Heels",
+    description: "Perfect heels for any occasion, combining style and comfort.",
+    price: "$89.99",
+    image: "https://images-static.nykaa.com/media/catalog/product/9/7/97030b8DPUMAX00168468_1.jpg?tr=w-344,h-344,cm-pad_resize"
+  },
+  {
+    id: 3,
+    title: "Casual Sandals",
+    description: "Lightweight sandals ideal for summer outings.",
+    price: "$39.99",
+    image: "https://images-static.nykaa.com/media/catalog/product/b/d/bd88401BDADIDA00059365_1.jpg?tr=w-344,h-344,cm-pad_resize"
+  },
+  {
+    id: 4,
+    title: "Running Shoes",
+    description: "High-performance running shoes designed for athletes.",
+    price: "$99.99",
+    image: "https://i5.walmartimages.com/asr/21713497-895d-4085-bd9e-01a2df6b3700_1.0c2e85c7953c44eee100fb3bc8782914.jpeg"
+  },
+  {
+    id: 5,
+    title: "Classic Loafers",
+    description: "Timeless loafers that add elegance to your wardrobe.",
+    price: "$79.99",
+    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+  },
+  {
+    id: 6,
+    title: "Sporty Trainers",
+    description: "Versatile trainers for both gym and casual wear.",
+    price: "$69.99",
+    image: "https://images-static.nykaa.com/media/catalog/product/9/7/97030b8DPUMAX00168468_1.jpg?tr=w-344,h-344,cm-pad_resize"
+  },
+  {
+    id: 7,
+    title: "Winter Boots",
+    description: "Warm and durable boots for cold weather.",
+    price: "$129.99",
+    image: "https://images-static.nykaa.com/media/catalog/product/b/d/bd88401BDADIDA00059365_1.jpg?tr=w-344,h-344,cm-pad_resize"
+  },
+  {
+    id: 8,
+    title: "Fashionable Flats",
+    description: "Chic flats that are perfect for everyday wear.",
+    price: "$49.99",
+    image: "https://i5.walmartimages.com/asr/21713497-895d-4085-bd9e-01a2df6b3700_1.0c2e85c7953c44eee100fb3bc8782914.jpeg"
+  },
+  {
+    id: 9,
+    title: "Luxury Boots",
+    description: "Premium boots that combine style and comfort.",
+    price: "$199.99",
+    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+  }
+];
+
+function FeatureProduct() {
   return (
-    <section className="relative bg-gradient-to-br from-purple-100 via-white to-blue-100 py-20 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        {/* Contact Info */}
-        <div className="backdrop-blur-md bg-white/50 rounded-2xl shadow-lg p-10 space-y-6">
-          <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
-          <p className="text-gray-600 text-lg">
-            Have any questions or feedback? We'd love to hear from you!
-          </p>
-
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <Mail className="text-blue-600" />
-              <span className="text-gray-700">contact@yourdomain.com</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Phone className="text-green-600" />
-              <span className="text-gray-700">+91 98765 43210</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <MapPin className="text-pink-600" />
-              <span className="text-gray-700">New Delhi, India</span>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Featured Products</h2>
+      <div className="row">
+        {featuredProducts.map((product) => (
+          <div className="col-md-4 mb-4" key={product.id}>
+            <div className="card">
+              <img src={product.image} className="card-img-top" alt={product.title} />
+              <div className="card-body">
+                <h5 className="card-title">{product.title}</h5>
+                <p className="card-text">{product.description}</p>
+                <p className="card-text"><strong>{product.price}</strong></p>
+                <button className="btn btn-primary">Add to Cart</button>
+              </div>
             </div>
           </div>
-
-          <div className="flex gap-4 pt-4">
-            <a href="#" className="hover:scale-110 transition transform duration-300">
-              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="w-6 h-6" />
-            </a>
-            <a href="#" className="hover:scale-110 transition transform duration-300">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="w-6 h-6" />
-            </a>
-            <a href="#" className="hover:scale-110 transition transform duration-300">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-white shadow-2xl rounded-2xl p-10">
-          <form className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Your Name</label>
-              <input
-                type="text"
-                className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="John Doe"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Email Address</label>
-              <input
-                type="email"
-                className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="you@example.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Your Message</label>
-              <textarea
-                rows="5"
-                className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Type your message..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-purple-600 text-white py-3 rounded-xl hover:bg-purple-700 transition duration-300"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        ))}
       </div>
-
-      {/* Google Map */}
-      <div className="mt-16 rounded-2xl overflow-hidden shadow-xl">
-        <iframe
-          title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14015.466732795625!2d77.2167214!3d28.6448001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdc6cb48eb8f%3A0xdee7c2d1226a9d46!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1717763603450"
-          width="100%"
-          height="300"
-          allowFullScreen=""
-          loading="lazy"
-          className="w-full h-72"
-        ></iframe>
-      </div>
-    </section>
+    </div>
   );
-};
+}
 
-export default ContactUs;
+export default FeatureProduct;

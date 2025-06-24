@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import React, { useRef, useState } from "react";
+import { FaCamera, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,9 +8,34 @@ import logo from "../../assets/logoShoes.jpg";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const fileInputRef = useRef(null);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  // Trigger file input when camera icon is clicked
+  const handleCameraClick = () => {
+    fileInputRef.current.click();
+  };
+
+  // Handle file selection (optional - you can display or upload the image here)
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("Selected file:", file);
+      // You can show preview or upload here
+    }
+  };
+
+  // Handle search action
+  const handleSearchClick = () => {
+    if (searchTerm.trim() !== "") {
+      console.log("Searching for:", searchTerm);
+      // You can redirect or filter results here
+    } else {
+      alert("Please enter a search term.");
+    }
   };
 
   return (
@@ -31,7 +56,18 @@ function Home() {
             onChange={handleSearchChange}
             className="search-input"
           />
-          <FaSearch className="search-icon" />
+
+          {/* Hidden file input for photo upload */}
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            style={{ display: "none" }}
+            onChange={handleFileChange}
+          />
+
+          <FaCamera className="camera-icon" onClick={handleCameraClick} />
+          <FaSearch className="search-icon" onClick={handleSearchClick} />
         </div>
 
         <nav className="nav-links">
@@ -52,10 +88,10 @@ function Home() {
               <Link to="/women/flats">Flats</Link>
             </div>
           </div>
+
           <Link to="/contact" className="home-link">
             Sports
           </Link>
-
           <Link to="/about" className="home-link">
             About Us
           </Link>
@@ -63,8 +99,7 @@ function Home() {
             Contact Us
           </Link>
           <Link to="/cart" className="home-link">
-          <i class="bi bi-bag-plus-fill"></i>
-            {/* <img src={cart} alt="Cart Icon" /> */}
+            <i className="bi bi-bag-plus-fill"></i>
           </Link>
         </nav>
       </header>
