@@ -1,17 +1,31 @@
 import React from "react";
-import Home from "./home";
 import HomeScreen from "./HomeScreen";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Models from "./Models";
+import Company_Name from "./CompanyName";
+import FeatureProduct from "./FeatureProduct";
+import FeedbackSection from "./Feedback";
+// import LatestNew
 
- <>
-<Home />
-<HomeScreen />
-</> 
 
 export default function Screen() {
   return (
     <div>
-      <Home />
-      <HomeScreen />
+      <>
+        <Navbar />
+        <HomeScreen />
+        <Models />
+        <Company_Name />
+        <FeatureProduct />
+
+        <FeedbackSection />
+        {/* <FeatureProduct /> */}
+        {/* <LatestNewsSection /> */}
+        {/* <FeedbackSection /> */}
+        <Footer />
+      </>
+
     </div>
   );
 }

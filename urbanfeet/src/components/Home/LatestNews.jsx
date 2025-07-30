@@ -103,4 +103,4 @@ function LatestNewsSection() {
         </div>
     );
 }
-export default LatestNewsSection;
+export default LatestNews;

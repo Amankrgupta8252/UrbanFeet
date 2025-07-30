@@ -1,8 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Company_Name from "../Home/CompanyName";
-import Home from "../Home/home";
 import Footer from "../Home/Footer";
+import HomeScreen from "../Home/HomeScreen";
+import Navbar from "../Home/Navbar";
+// import Home from '../Home/Home';
 // import "./MenShoesCart.css"; // optional custom CSS
 
 
@@ -92,55 +94,56 @@ const shoesData = [
 
 function MenShoesCart() {
   return (
-<>
-    
-<Home />
-<Company_Name />
+    <>
 
-    <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <div className="card-body">
-        <img src="https://www.hollywoodreporter.com/wp-content/uploads/2021/09/Madewell-Kickoff-Trainer-Sneakers-in-Neutral-Colorblock-Leather-EMBED-2022.jpeg" alt="" className="card-img-top" />
-      </div>
-      
-    </div>
-    <div class="col">
-      <div className="card-body">
-        <img src="https://i.pinimg.com/originals/dc/c6/c0/dcc6c0aeab3d91432033e670d35d838e.jpg" alt="" className="card-img-top"/>
-      </div>
-      
-    </div>
-    <div class="col">
-      <div className="card-body">
-        <img src="https://images.dsw.com/is/image/DSWShoes/533599_003_ss_01?impolicy=qlt-medium-high&imwidth=640&imden" alt=""className="card-img-top" />
-      </div>
-      
-    </div>
-  </div>
-</div>
+    <Navbar />
+      <HomeScreen />
+      <Company_Name />
 
-    <div className="container mt-4">
-      <h2 className="mb-4 text-center">Men's Shoes Collection</h2>
-      <div className="row">
-        {shoesData.map((shoe) => (
-          <div key={shoe.id} className="col-md-3 mb-4">
-            <div className="card h-100 shadow-sm">
-              <img src={shoe.image} className="card-img-top" alt={shoe.title} />
-              <div className="card-body">
-                <h5 className="card-title">{shoe.title}</h5>
-                <p className="card-text">{shoe.description}</p>
-                <p className="card-text"><strong>{shoe.price}</strong></p>
-                <p className="card-text">⭐ {shoe.rate}</p>
-                <button className="btn btn-primary w-100">Add to Cart</button>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <div className="card-body">
+              <img src="https://www.hollywoodreporter.com/wp-content/uploads/2021/09/Madewell-Kickoff-Trainer-Sneakers-in-Neutral-Colorblock-Leather-EMBED-2022.jpeg" alt="" className="card-img-top" />
+            </div>
+
+          </div>
+          <div class="col">
+            <div className="card-body">
+              <img src="https://i.pinimg.com/originals/dc/c6/c0/dcc6c0aeab3d91432033e670d35d838e.jpg" alt="" className="card-img-top" />
+            </div>
+
+          </div>
+          <div class="col">
+            <div className="card-body">
+              <img src="https://images.dsw.com/is/image/DSWShoes/533599_003_ss_01?impolicy=qlt-medium-high&imwidth=640&imden" alt="" className="card-img-top" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="container mt-4">
+        <h2 className="mb-4 text-center">Men's Shoes Collection</h2>
+        <div className="row">
+          {shoesData.map((shoe) => (
+            <div key={shoe.id} className="col-md-3 mb-4">
+              <div className="card h-100 shadow-sm">
+                <img src={shoe.image} className="card-img-top" alt={shoe.title} />
+                <div className="card-body">
+                  <h5 className="card-title">{shoe.title}</h5>
+                  <p className="card-text">{shoe.description}</p>
+                  <p className="card-text"><strong>{shoe.price}</strong></p>
+                  <p className="card-text">⭐ {shoe.rate}</p>
+                  <button className="btn btn-primary w-100">Add to Cart</button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
 
-    <Footer />
+      <Footer />
     </>
   );
 }

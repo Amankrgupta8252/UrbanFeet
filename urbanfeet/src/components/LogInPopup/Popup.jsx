@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // ✅ Add this
 
-const LoginPopup = () => {
+const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate(); // ✅ For navigation
 
-  // Show popup after 10 seconds
+  // Show popup after 5 seconds
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem('popupShown');
 
@@ -13,7 +13,7 @@ const LoginPopup = () => {
       const timer = setTimeout(() => {
         setShowPopup(true);
         sessionStorage.setItem('popupShown', 'true');
-      }, 10000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
@@ -32,6 +32,17 @@ const LoginPopup = () => {
     };
   }, [showPopup]);
 
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') closePopup();
+    };
+
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, []);
+
+
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -39,8 +50,8 @@ const LoginPopup = () => {
   if (!showPopup) return null;
 
   return (
-    <div style={overlayStyle}>
-      <div style={popupStyle}>
+    <div style={overlayStyle} onClick={closePopup}>
+      <div style={popupStyle} onClick={(e) => e.stopPropagation()}>
         <h2 style={{ marginBottom: '10px' }}>Welcome to Urban Feet!</h2>
         <p>Please login or register to explore more.</p>
 
@@ -53,9 +64,8 @@ const LoginPopup = () => {
           <p style={{ marginBottom: '10px' }}>Choose an option:</p>
           <p style={{ marginBottom: '20px' }}>Login to your account or register a new one.</p>
 
-          <button onClick={() => { navigate('/login'); closePopup(); }} style={btnStyle}>Login</button>
-          <button onClick={() => { navigate('/register'); closePopup(); }} style={btnStyle}>Register</button>
-        </div>
+          <button onClick={() => { navigate('/LogInPopup'); closePopup(); }} style={btnStyle}>Login</button>
+          <button onClick={() => { navigate('/register'); closePopup(); }} style={btnStyle}>Register</button>        </div>
 
         <button onClick={closePopup} style={closeBtn}>×</button>
       </div>
@@ -109,4 +119,4 @@ const closeBtn = {
   cursor: 'pointer',
 };
 
-export default LoginPopup;
+export default Popup;

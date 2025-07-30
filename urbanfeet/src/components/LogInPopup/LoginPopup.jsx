@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const LoginModal = ({ onClose }) => {
+const LoginPopup = ({ onClose }) => {
   return (
     <div style={overlayStyle}>
       <div style={modalStyle}>
@@ -41,7 +41,9 @@ const modalStyle = {
   width: '400px',
   position: 'relative',
   boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+  animation: 'popUp 0.3s ease',
 };
+
 
 const closeBtn = {
   position: 'absolute',
@@ -56,4 +58,4 @@ const closeBtn = {
   cursor: 'pointer',
 };
 
-export default LoginModal;  
+export default LoginPopup;  

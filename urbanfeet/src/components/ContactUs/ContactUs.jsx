@@ -1,9 +1,9 @@
 import React from "react";
 import "./ContactUs.css"; 
-import Home from "../Home/home";
+import Home from "../Home/Navbar";
 
 const ContactUs = () => {
-  return (
+  return (  
     <>
     <Home />
 
