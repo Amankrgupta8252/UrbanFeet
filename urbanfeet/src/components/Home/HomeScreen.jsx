@@ -32,9 +32,9 @@ function HomeScreen() {
     <>
       {/* <Home /> */}
       {/* Carousel */}
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h1 className="mt-4">Welcome to Urban Feet</h1>
             <p className="lead">Explore the latest in footwear fashion and technology.</p>
             <p className="mb-4">Discover our exclusive collection of shoes designed for comfort, style, and performance.</p>
@@ -42,7 +42,7 @@ function HomeScreen() {
             <button className="btn btn-secondary ms-2">Learn More</button>
             <p className="mt-3">Follow us on social media for the latest updates!</p>
           </div>
-          <div class="col">
+          <div className="col">
 
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">

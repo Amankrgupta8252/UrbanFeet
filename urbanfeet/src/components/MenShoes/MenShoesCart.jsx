@@ -100,21 +100,21 @@ function MenShoesCart() {
       <HomeScreen />
       <Company_Name />
 
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <div className="card-body">
               <img src="https://www.hollywoodreporter.com/wp-content/uploads/2021/09/Madewell-Kickoff-Trainer-Sneakers-in-Neutral-Colorblock-Leather-EMBED-2022.jpeg" alt="" className="card-img-top" />
             </div>
 
           </div>
-          <div class="col">
+          <div className="col">
             <div className="card-body">
               <img src="https://i.pinimg.com/originals/dc/c6/c0/dcc6c0aeab3d91432033e670d35d838e.jpg" alt="" className="card-img-top" />
             </div>
 
           </div>
-          <div class="col">
+          <div className="col">
             <div className="card-body">
               <img src="https://images.dsw.com/is/image/DSWShoes/533599_003_ss_01?impolicy=qlt-medium-high&imwidth=640&imden" alt="" className="card-img-top" />
             </div>

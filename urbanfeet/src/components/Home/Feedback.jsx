@@ -48,7 +48,7 @@ const Feedback = [
     },
     {
         name: 'Sophia Blue',
-        image: 'https://sm.askmen.com/t/askmen_in/article/f/facebook-p/facebook-profile-picture-affects-chances-of-gettin_fr3n.1200.jpg',
+        image: 'https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/004.webp',
         feedback: 'I am impressed with the range of brands available at UrbanShoes. I found exactly what I was looking for!',
         rating: 5
     }
