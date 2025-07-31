@@ -65,7 +65,7 @@ const Popup = () => {
           <p style={{ marginBottom: '20px' }}>Login to your account or register a new one.</p>
 
           <button onClick={() => { navigate('/LogInPopup'); closePopup(); }} style={btnStyle}>Login</button>
-          <button onClick={() => { navigate('/register'); closePopup(); }} style={btnStyle}>Register</button>        </div>
+          <button onClick={() => { navigate('/RegiPopup'); closePopup(); }} style={btnStyle}>Register</button>        </div>
 
         <button onClick={closePopup} style={closeBtn}>×</button>
       </div>

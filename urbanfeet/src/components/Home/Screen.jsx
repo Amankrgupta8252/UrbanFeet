@@ -6,7 +6,8 @@ import Models from "./Models";
 import Company_Name from "./CompanyName";
 import FeatureProduct from "./FeatureProduct";
 import FeedbackSection from "./Feedback";
-// import LatestNew
+import LatestNews from "./LatestNews";
+import Popup from "../LogInPopup/Popup";
 
 
 export default function Screen() {
@@ -20,10 +21,12 @@ export default function Screen() {
         <FeatureProduct />
 
         <FeedbackSection />
-        {/* <FeatureProduct /> */}
-        {/* <LatestNewsSection /> */}
-        {/* <FeedbackSection /> */}
+        <LatestNews />
+        
         <Footer />
+        <Popup/>
+        {/* <LoginPopup/> */}
+        {/* <RegiPopup/> */}
       </>
 
     </div>
