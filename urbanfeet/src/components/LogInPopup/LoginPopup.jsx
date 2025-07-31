@@ -1,55 +1,47 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPopup = ({ onClose }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const validateForm = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email.');
-      return false;
-    }
-    if (password.length < 6) {
-      alert('Password must be at least 6 characters.');
-      return false;
-    }
-    return true;
-  };
-
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) return;
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/login', {
+      const res = await fetch('http://localhost:5000/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
 
+      const data = await res.json();
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (res.ok) {
         alert('Login successful!');
-        console.log(data); // maybe token or user data
-        onClose(); // close popup
+        onClose();
+        setTimeout(() => navigate('/'), 100);
       } else {
         alert(data.message || 'Login failed');
       }
-    } catch (error) {
-      console.error('Login error:', error);
-      alert('Something went wrong. Please try again later.');
+    } catch (err) {
+      console.error(err);
+      alert('Something went wrong');
     }
   };
 
   return (
     <div style={overlayStyle}>
       <div style={modalStyle}>
+        <button onClick={onClose} style={closeBtn}>×</button>
         <h3 className="mb-3">Login</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLogin}>
           <div className="mb-3">
             <label>Email</label>
             <input
@@ -74,7 +66,6 @@ const LoginPopup = ({ onClose }) => {
             Login
           </button>
         </form>
-        <button onClick={onClose} style={closeBtn}>×</button>
       </div>
     </div>
   );
@@ -98,7 +89,6 @@ const modalStyle = {
   width: '400px',
   position: 'relative',
   boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-  animation: 'popUp 0.3s ease',
 };
 
 const closeBtn = {

@@ -17,7 +17,7 @@ const brands = [
   },
   {
     name: 'Reebok',
-    image: 'https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3',
+    image: 'https://i8.amplience.net/i/jpl/sz_686989_a?qlt=92&w=750&h=580&v=1&fmt=auto',
   },
   {
     name: 'Nike',
@@ -33,11 +33,11 @@ const brands = [
   },
   {
     name: 'Reebok',
-    image: 'https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3',
+    image: 'https://i.ebayimg.com/images/g/-skAAOSwVvRkcsqy/s-l1600.jpg',
   },
   {
     name: 'New Balance',
-    image: 'https://th.bing.com/th/id/R.a7bd4bcb7f14cb7786d27f6e2f4e6ae0?rik=Rd0YZJsjMW1yvA&riu=http%3a%2f%2fimage.sportsmansguide.com%2fadimgs%2fl%2f6%2f609817m2_ts.jpg&ehk=SsGhfeWjnXOu%2fU4sCbUI4k31WW1lIrUYfacxMa1Dd7g%3d&risl=&pid=ImgRaw&r=0',
+    image: 'https://cdn.sweatband.com/new_balance_w560v3_womens_running_shoes_new_balance_w560v3_womens_running_shoes_pair_2000x2000.jpg',
   },
   {
     name: 'Asics',

@@ -36,7 +36,7 @@ const Feedback = [
     },
     {
         name: 'Emily Green',
-        image: 'https://static-00.iconduck.com/assets.00/profile-circle-icon-1023x1024-ucnnjrj1.png',
+        image: 'https://www.profilebakery.com/wp-content/uploads/2023/04/Profile-Image-AI.jpg',
         feedback: 'I appreciate the quality and durability of the shoes I bought from UrbanShoes. They are worth every penny!',
         rating: 5
     },

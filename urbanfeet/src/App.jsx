@@ -7,8 +7,8 @@ import Screen from './components/Home/Screen';
 // import HomeScreen from './components/Home/HomeScreen';
 
 import ContactUs from './components/ContactUs/ContactUs';
-import LoginPopup from './components/LogInPopup/LoginPopup';
-import RegiPopup from './components/LogInPopup/RegiPopup';
+// import LoginPopup from './components/LogInPopup/LoginPopup';
+// import RegiPopup from './components/LogInPopup/RegiPopup';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Route path="/" element={<Screen />} />
       <Route path="/menshoes" element={<MenShoesCart />} />
       <Route path ="/contactus" element={<ContactUs/>} />
-      <Route path ="LoginPopup" element={<LoginPopup />} />
-      <Route path ="RegiPopup"  element={<RegiPopup />} />
+      {/* <Route path ="LoginPopup" element={<LoginPopup />} /> */}
+      {/* <Route path ="RegiPopup"  element={<RegiPopup />} /> */}
 
     </Routes>
   );

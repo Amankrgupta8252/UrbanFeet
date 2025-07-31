@@ -10,6 +10,7 @@ import LatestNews from "./LatestNews";
 import Popup from "../LogInPopup/Popup";
 
 
+
 export default function Screen() {
   return (
     <div>
@@ -19,14 +20,11 @@ export default function Screen() {
         <Models />
         <Company_Name />
         <FeatureProduct />
-
-        <FeedbackSection />
         <LatestNews />
-        
+        <FeedbackSection />
         <Footer />
         <Popup/>
-        {/* <LoginPopup/> */}
-        {/* <RegiPopup/> */}
+        
       </>
 
     </div>

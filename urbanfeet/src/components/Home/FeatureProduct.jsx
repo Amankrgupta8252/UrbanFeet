@@ -8,7 +8,7 @@ const featuredProducts = [
     title: "Stylish Sneakers",
     description: "Comfortable and trendy sneakers for everyday wear.",
     price: "$59.99",
-    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+    image: "https://cdn.sweatband.com/new_balance_w560v3_womens_running_shoes_new_balance_w560v3_womens_running_shoes_pair_2000x2000.jpg"
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const featuredProducts = [
     title: "Classic Loafers",
     description: "Timeless loafers that add elegance to your wardrobe.",
     price: "$79.99",
-    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+    image: "https://i8.amplience.net/i/jpl/sz_686989_a?qlt=92&w=750&h=580&v=1&fmt=auto"
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const featuredProducts = [
     title: "Luxury Boots",
     description: "Premium boots that combine style and comfort.",
     price: "$199.99",
-    image: "https://th.bing.com/th/id/OIP.pskOkB3R3zi9NpgYJXuxpAHaHa?r=0&pid=ImgDet&w=185&h=185&c=7&dpr=1.3"
+    image: "https://cdn.sweatband.com/new_balance_w560v3_womens_running_shoes_new_balance_w560v3_womens_running_shoes_pair_2000x2000.jpg"
   }
 ];
 

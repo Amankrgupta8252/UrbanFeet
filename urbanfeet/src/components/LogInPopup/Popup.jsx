@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ Add this
+import LoginPopup from './LoginPopup';
+import RegiPopup from './RegiPopup';
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const navigate = useNavigate(); // ✅ For navigation
+  const [activeForm, setActiveForm] = useState(null); // 'login' | 'register' | null
 
   // Show popup after 5 seconds
   useEffect(() => {
@@ -21,17 +22,9 @@ const Popup = () => {
 
   // Freeze background scroll
   useEffect(() => {
-    if (showPopup) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = showPopup ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; };
   }, [showPopup]);
-
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -42,9 +35,9 @@ const Popup = () => {
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
-
   const closePopup = () => {
     setShowPopup(false);
+    setActiveForm(null); // reset form
   };
 
   if (!showPopup) return null;
@@ -52,20 +45,20 @@ const Popup = () => {
   return (
     <div style={overlayStyle} onClick={closePopup}>
       <div style={popupStyle} onClick={(e) => e.stopPropagation()}>
-        <h2 style={{ marginBottom: '10px' }}>Welcome to Urban Feet!</h2>
-        <p>Please login or register to explore more.</p>
 
-        <div style={{ marginTop: '15px' }}>
-          <p style={{ marginBottom: '10px' }}>Login or Register to continue</p>
-          <p style={{ marginBottom: '20px' }}>We are excited to have you here!</p>
-        </div>
+        {activeForm === null && (
+          <>
+            <h2 style={{ marginBottom: '10px' }}>Welcome to Urban Feet!</h2>
+            <p>Please login or register to explore more.</p>
+            <div style={{ marginTop: '20px' }}>
+              <button onClick={() => setActiveForm('login')} style={btnStyle}>Login</button>
+              <button onClick={() => setActiveForm('register')} style={btnStyle}>Register</button>
+            </div>
+          </>
+        )}
 
-        <div style={{ marginTop: '20px' }}>
-          <p style={{ marginBottom: '10px' }}>Choose an option:</p>
-          <p style={{ marginBottom: '20px' }}>Login to your account or register a new one.</p>
-
-          <button onClick={() => { navigate('/LogInPopup'); closePopup(); }} style={btnStyle}>Login</button>
-          <button onClick={() => { navigate('/RegiPopup'); closePopup(); }} style={btnStyle}>Register</button>        </div>
+        {activeForm === 'login' && <LoginPopup onClose={closePopup} />}
+        {activeForm === 'register' && <RegiPopup onClose={closePopup} />}
 
         <button onClick={closePopup} style={closeBtn}>×</button>
       </div>
