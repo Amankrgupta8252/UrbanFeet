@@ -1,28 +1,26 @@
-import React from "react";
-
-const shoeCards = [
-  {
-    title: "Shoe One",
-    img: "https://thumbs.dreamstime.com/z/business-man-shoes-professional-getting-ready-work-putting-smart-tying-shoelaces-home-51343560.jpg",
-    desc: "Comfortable and stylish for daily wear."
-  },
-  {
-    title: "Shoe Two",
-    img: "https://thumbs.dreamstime.com/z/girl-shoes-beautiful-35850276.jpg",
-    desc: "Perfect for sports and outdoor activities."
-  },
-  {
-    title: "Sneaker Pro",
-    img: "https://th.bing.com/th/id/OIP.BMusBBvno4N3ZfpFSxVfqAAAAA?r=0&w=396&h=640&rs=1&pid=ImgDetMain",
-    desc: "High-performance and trendy for every occasion."
-  }
-];
-
+import React, { useState } from "react";
 
 function Models() {
-    return(
-        <>
-         {/* Product Cards */}
+  const [shoeCards, setshoeCards] = useState([
+    {
+      title: "Shoe One",
+      img: "https://thumbs.dreamstime.com/z/business-man-shoes-professional-getting-ready-work-putting-smart-tying-shoelaces-home-51343560.jpg",
+      desc: "Comfortable and stylish for daily wear."
+    },
+    {
+      title: "Shoe Two",
+      img: "https://thumbs.dreamstime.com/z/girl-shoes-beautiful-35850276.jpg",
+      desc: "Perfect for sports and outdoor activities."
+    },
+    {
+      title: "Sneaker Pro",
+      img: "https://th.bing.com/th/id/OIP.BMusBBvno4N3ZfpFSxVfqAAAAA?r=0&w=396&h=640&rs=1&pid=ImgDetMain",
+      desc: "High-performance and trendy for every occasion."
+    }
+  ]);
+  return (
+    <>
+      {/* Product Cards */}
       <div className="container mt-4">
         <div className="row">
           {shoeCards.map((shoe, index) => (
@@ -42,8 +40,8 @@ function Models() {
           ))}
         </div>
       </div>
-        </>
-    )
+    </>
+  )
 }
 
 export default Models;

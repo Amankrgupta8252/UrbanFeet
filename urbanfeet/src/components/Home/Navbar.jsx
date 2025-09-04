@@ -63,7 +63,7 @@ function Navbar() {
             <span className="home-link">Men ▾</span>
             <div className="dropdown-content">
               <Link to="/menshoes">Shoes</Link>
-              <Link to="/men/sneakers">Sneakers</Link>
+              <Link to="/Mensneakers">Sneakers</Link>
               <Link to="/men/sandals">Sandals</Link>
             </div>
           </div>
@@ -71,7 +71,7 @@ function Navbar() {
           <div className="dropdown">
             <span className="home-link">Women ▾</span>
             <div className="dropdown-content">
-              <Link to="/women/heels">Heels</Link>
+              <Link to="/womenheels">Heels</Link>
               <Link to="/women/sneakers">Sneakers</Link>
               <Link to="/women/flats">Flats</Link>
             </div>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CompanyName.css'; 
 
-const brands = [
+
+
+function Company_Name() {
+  const [ brands, setbrandData ] = useState ([
   {
     name: 'Nike',
     image: 'https://i5.walmartimages.com/asr/21713497-895d-4085-bd9e-01a2df6b3700_1.0c2e85c7953c44eee100fb3bc8782914.jpeg',
@@ -60,9 +63,7 @@ const brands = [
     image: 'https://th.bing.com/th/id/OIP.2GkaeXL4155F2S9DmfY4YwHaHa?r=0&rs=1&pid=ImgDetMain&cb=idpwebpc1',
   },
   
-];
-
-function Company_Name() {
+]);
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Our Partners</h2>

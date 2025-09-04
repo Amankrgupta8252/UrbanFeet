@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 // Rename the array variable to avoid name conflict with the component
-const featuredProducts = [
+
+
+function FeatureProduct() {
+  const [ featuredProducts, setfeaturedProducts ] = useState ([
   {
     id: 1,
     title: "Stylish Sneakers",
@@ -66,9 +69,7 @@ const featuredProducts = [
     price: "$199.99",
     image: "https://cdn.sweatband.com/new_balance_w560v3_womens_running_shoes_new_balance_w560v3_womens_running_shoes_pair_2000x2000.jpg"
   }
-];
-
-function FeatureProduct() {
+]);
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Featured Products</h2>

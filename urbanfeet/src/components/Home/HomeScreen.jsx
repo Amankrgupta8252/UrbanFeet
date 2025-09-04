@@ -1,37 +1,32 @@
-import React from 'react';
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-// import Company_Name from './CompanyName';
-// import FeatureProduct from './FeatureProduct';
-// import FeedbackSection from './Feedback';
-// import LatestNewsSection from './LatestNews';
-// import Footer from './Footer';
-// import Home from './Home';
-
-const carouselData = [
-  {
-    url: "https://golfshub.com/wp-content/uploads/2019/09/nike-mens-roshe-golf-shoes.jpg",
-    label: "Street Ready",
-    description: "Comfort meets performance in every step."
-  },
-  {
-    url: "https://images5.alphacoders.com/632/632664.jpg",
-    label: "Casual Comfort",
-    description: "Your daily wear just got a lot better."
-  },
-  {
-    url: "https://cdn.pixabay.com/photo/2016/02/22/12/01/shoe-1215384_960_720.jpg",
-    label: "Elegant Edge",
-    description: "A perfect blend of style and support."
-  }
-];
 
 
 function HomeScreen() {
+  const [ carouselDate, setCarouselData ] = useState([
+    {
+      url: "https://golfshub.com/wp-content/uploads/2019/09/nike-mens-roshe-golf-shoes.jpg",
+      label: "Street Ready",
+      description: "Comfort meets performance in every step."
+    },
+    {
+      url: "https://2app.kicksonfire.com/kofapp/upload/events_master_images/ipad_nike-sabrina-2-white-noise.png",
+      label: "Elegant Edge",
+      description: "A perfect blend of style and support."
+    },
+    {
+      url: "https://justfreshkicks.com/wp-content/uploads/2024/03/nike-ja-1-ny-vs-ny-official-look-FV1286-400.jpg",
+      label: "Casual Comfort",
+      description: "Your daily wear just got a lot better."
+    },
+    {
+      url: "https://tse3.mm.bing.net/th/id/OIP.jOqngvv5edYDYLMl62bZggHaEF?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      label: "Elegant Edge",
+      description: "A perfect blend of style and support."
+    }
+  ]);
   return (
     <>
-      {/* <Home /> */}
-      {/* Carousel */}
       <div className="container text-center">
         <div className="row">
           <div className="col">
@@ -42,11 +37,12 @@ function HomeScreen() {
             <button className="btn btn-secondary ms-2">Learn More</button>
             <p className="mt-3">Follow us on social media for the latest updates!</p>
           </div>
-          <div className="col">
 
+          <div className="col">
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+              {/* Indicators */}
               <div className="carousel-indicators">
-                {carouselData.map((_, index) => (
+                {carouselDate.map((_, index) => (
                   <button
                     key={index}
                     type="button"
@@ -59,8 +55,9 @@ function HomeScreen() {
                 ))}
               </div>
 
+              {/* Carousel items */}
               <div className="carousel-inner">
-                {carouselData.map((item, index) => (
+                {carouselDate.map((item, index) => (
                   <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
                     <img
                       src={item.url}
@@ -76,6 +73,7 @@ function HomeScreen() {
                 ))}
               </div>
 
+              {/* Controls */}
               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
@@ -85,22 +83,10 @@ function HomeScreen() {
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-
-
           </div>
         </div>
       </div>
-
-
-
-
-      {/* <Company_Name />
-      <FeatureProduct />
-      <LatestNewsSection />
-      <FeedbackSection />
-      <Footer /> */}
-    </>
+    </> 
   );
 }
-
 export default HomeScreen;

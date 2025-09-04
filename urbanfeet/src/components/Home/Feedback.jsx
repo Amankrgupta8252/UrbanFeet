@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaStar } from 'react-icons/fa';
 import './FeedbackSection.css'; // We'll add custom styles here
 
-const Feedback = [
+
+function FeedbackSection() {
+    const [Feedback, setFeedback] = useState([
     {
         name: 'John Doe',
         image: 'https://th.bing.com/th/id/OIP.NqY3rNMnx2NXYo3KJfg43gHaHa?r=0&rs=1&pid=ImgDetMain',
@@ -52,9 +54,8 @@ const Feedback = [
         feedback: 'I am impressed with the range of brands available at UrbanShoes. I found exactly what I was looking for!',
         rating: 5
     }
-];
+]);
 
-function FeedbackSection() {
     return (
         <div className="container mt-4">
             <h2 className="text-center mb-4">Customer Feedback</h2>

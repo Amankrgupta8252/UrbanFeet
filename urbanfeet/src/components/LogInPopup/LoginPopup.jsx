@@ -74,8 +74,8 @@ const LoginPopup = ({ onClose }) => {
 const overlayStyle = {
   position: 'fixed',
   inset: 0,
-  backgroundColor: 'rgba(0,0,0,0.6)',
-  backdropFilter: 'blur(3px)',
+  // backgroundColor: 'rgba(0,0,0,0.6)',
+  // backdropFilter: 'blur(3px)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
