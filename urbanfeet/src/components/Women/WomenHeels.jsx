@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "../Home/Navbar";
+import HomeScreen from "../Home/HomeScreen";
+import Company_Name from "../Home/CompanyName";
 
 function WomenHeels() {
     const [heelsData, setHeelsData] = useState([
@@ -13,6 +16,7 @@ function WomenHeels() {
         },
         {
             id: 2,
+
             title: "Elegant Stiletto Heels",
             image: "https://example.com/stiletto-heels.jpg",
             description: "Perfect for formal occasions with a sleek design.",
@@ -39,6 +43,9 @@ function WomenHeels() {
 
     return(
         <>
+        <Navbar />
+        <HomeScreen />
+        <Company_Name />
             <div className="container mt-4">
                 <h2 className="text-center mb-4">Featured Heels</h2>
                 <div className="row">

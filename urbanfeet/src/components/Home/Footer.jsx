@@ -29,7 +29,7 @@ function Footer() {
           <div className="col-md-4 mb-4">
             <h5>Contact Us</h5>
             <p>Email: support@urbanshoes.com</p>
-            <p>Phone: +91 9876543210</p>
+            <p>Phone: +91 8252339216</p>
 
             <div className="footer-social-icons mt-3">
               <a href="#"><FaFacebookF /></a>

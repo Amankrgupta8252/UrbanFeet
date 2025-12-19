@@ -14,7 +14,7 @@ const ContactUs = () => {
           <p>We’d love to hear from you. Reach out with any questions.</p>
 
           <ul className="info-list">
-            <li><strong>Email:</strong> contact@example.com</li>
+            <li><strong>Email:</strong> urbanfeet@helpline.com</li>
             <li><strong>Phone:</strong> +91 82523 39216</li>
             <li><strong>Address:</strong> Bihar, India</li>
           </ul>

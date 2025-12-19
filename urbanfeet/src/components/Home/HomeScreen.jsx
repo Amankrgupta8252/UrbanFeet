@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function HomeScreen() {
-  const [ carouselDate, setCarouselData ] = useState([
+  const [carouselDate, setCarouselData] = useState([
     {
       url: "https://golfshub.com/wp-content/uploads/2019/09/nike-mens-roshe-golf-shoes.jpg",
       label: "Street Ready",
@@ -29,16 +29,8 @@ function HomeScreen() {
     <>
       <div className="container text-center">
         <div className="row">
-          <div className="col">
-            <h1 className="mt-4">Welcome to Urban Feet</h1>
-            <p className="lead">Explore the latest in footwear fashion and technology.</p>
-            <p className="mb-4">Discover our exclusive collection of shoes designed for comfort, style, and performance.</p>
-            <button className="btn btn-primary">Shop Now</button>
-            <button className="btn btn-secondary ms-2">Learn More</button>
-            <p className="mt-3">Follow us on social media for the latest updates!</p>
-          </div>
-
-          <div className="col">
+          {/* Carousel Column */}
+          <div className="col-12 col-md-6 order-1 order-md-2">
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
               {/* Indicators */}
               <div className="carousel-indicators">
@@ -84,9 +76,20 @@ function HomeScreen() {
               </button>
             </div>
           </div>
+
+          {/* Text Column */}
+          <div className="col-12 col-md-6 order-2 order-md-1">
+            <h1 className="mt-4">Welcome to Urban Feet</h1>
+            <p className="lead">Explore the latest in footwear fashion and technology.</p>
+            <p className="mb-4">Discover our exclusive collection of shoes designed for comfort, style, and performance.</p>
+            <button className="btn btn-primary">Shop Now</button>
+            <button className="btn btn-secondary ms-2">Learn More</button>
+            <p className="mt-3">Follow us on social media for the latest updates!</p>
+          </div>
         </div>
       </div>
-    </> 
+
+    </>
   );
 }
 export default HomeScreen;
