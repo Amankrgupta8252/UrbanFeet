@@ -13,6 +13,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import WomenSneakers from './components/Women/WomenSneakers';
 import SportShoes from './components/Sports/SportShoes';
 import About from './components/AbouPage/About';
+import Sandal from './components/MenShoes/Sandal';
 // import LoginPopup from './components/LogInPopup/LoginPopup';
 // import RegiPopup from './components/LogInPopup/RegiPopup';
 
@@ -23,6 +24,8 @@ function App() {
       <Route path="/menshoes" element={<MenShoesCart />} />
       <Route path="/Mensneakers" element={<Mensneakers />} />
       <Route path="/MenSandals" element={<MenSandals />} />
+      <Route path="/Sandal" element={<Sandal />} />
+      <Route path="/Heels" element={<Heels /> } />
       <Route path="/womenheels" element={<WomenHeels />} />
       <Route path="/WomenSneakers" element={<WomenSneakers />} />
       <Route path="/WomenFlats" element={<WomenSneakers />} />

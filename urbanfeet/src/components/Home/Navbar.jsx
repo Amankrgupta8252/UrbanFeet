@@ -16,11 +16,13 @@ function Navbar() {
   const handleSearchChange = (event) => setSearchTerm(event.target.value);
   const handleCameraClick = () => fileInputRef.current.click();
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Selected file:", file);
-    }
-  };
+  const file = event.target.files[0];
+  if (file) {
+    const imageURL = URL.createObjectURL(file);
+    setSelectedImage(imageURL);
+  }
+};
+
 
   const handleSearchClick = () => {
     if (searchTerm.trim() !== "") {
@@ -69,7 +71,7 @@ function Navbar() {
           <div className="dropdown">
             <span className="home-link">Men ▾</span>
             <div className="dropdown-content">
-              <Link to="/menshoes">Shoes</Link>
+              {/* <Link to="/menshoes">SportsShoes</Link> */}
               <Link to="/Mensneakers">Sneakers</Link>
               <Link to="/MenSandals">Sandals</Link>
             </div>

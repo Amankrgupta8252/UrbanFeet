@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "../Home/Navbar";
 import HomeScreen from "../Home/HomeScreen";
 import Company_Name from "../Home/CompanyName";
+import Heels from "./Heels";
 
 function WomenHeels() {
     const [heelsData, setHeelsData] = useState([
@@ -44,7 +45,7 @@ function WomenHeels() {
     return(
         <>
         <Navbar />
-        <HomeScreen />
+        <Heels/>
         <Company_Name />
             <div className="container mt-4">
                 <h2 className="text-center mb-4">Featured Heels</h2>
